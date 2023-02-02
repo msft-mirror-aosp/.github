@@ -3,14 +3,15 @@
 
 ## Build Machine Setup
 
-
 ## Sync the code
+
 ```bash
 repo init git@github.com:msft-mirror-aosp/manifest.aosp.git
 repo sync -j8 --force-sync
 ```
 
 ## Building AOSP
+
 |Config                       |Build Verified  |
 |-----------------------------|----------------|
 |aosp_arm64-user              | x              |
@@ -28,5 +29,6 @@ build/soong/soong_ui.bash --make-mode TARGET_PRODUCT=aosp_arm64 TARGET_BUILD_VAR
 ```
 
 ## Android Reference
+
 - [Building Android](https://source.android.com/docs/setup/build/building)
 - [Android Build Environment](https://source.android.com/docs/setup/start/initializing)
