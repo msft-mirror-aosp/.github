@@ -1,12 +1,32 @@
-## Hi there 👋
+## Release Note
+<!-- TODO: what is in the release. what tag is this AOSP based on -->
 
-<!--
+## Build Machine Setup
 
-**Here are some ideas to get you started:**
 
-🙋‍♀️ A short introduction - what is your organization all about?
-🌈 Contribution guidelines - how can the community get involved?
-👩‍💻 Useful resources - where can the community find your docs? Is there anything else the community should know?
-🍿 Fun facts - what does your team eat for breakfast?
-🧙 Remember, you can do mighty things with the power of [Markdown](https://docs.github.com/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
--->
+## Sync the code
+```bash
+repo init git@github.com:msft-mirror-aosp/manifest.aosp.git
+repo sync -j8 --force-sync
+```
+
+## Building AOSP
+|Config                       |Build Verified  |
+|-----------------------------|----------------|
+|aosp_arm64-user              | x              |
+|aosp_arm64-userdebug         | x              |
+
+```bash
+# Setup the environment.
+source build/envsetup.sh
+
+# Choose a lunch target.   For example, 'lunch aosp_arm64-userdebug', or just use lunch directly.
+lunch aosp_arm64-userdebug
+
+# Compile.  (Substitute the TARGET_PRODUCT and TARGET_BUILD_VARIANT, as needed)
+build/soong/soong_ui.bash --make-mode TARGET_PRODUCT=aosp_arm64 TARGET_BUILD_VARIANT=userdebug dist
+```
+
+## Android Reference
+- [Building Android](https://source.android.com/docs/setup/build/building)
+- [Android Build Environment](https://source.android.com/docs/setup/start/initializing)
