@@ -1,14 +1,5 @@
-## Release Note
-<!-- TODO: what is in the release. what tag is this AOSP based on -->
-
-## Build Machine Setup
-
-## Sync the code
-
-```bash
-repo init git@github.com:msft-mirror-aosp/manifest.aosp.git
-repo sync -j8 --force-sync
-```
+## Overview
+This is a mirror copy of AOSP
 
 ## Building AOSP
 
